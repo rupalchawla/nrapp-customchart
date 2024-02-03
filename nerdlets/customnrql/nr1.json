@@ -1,0 +1,7 @@
+{
+    "schemaType": "NERDLET",
+    "id": "customnrql",
+    "displayName": "Custom NRQL",
+    "description": "Custom NRQL"
+  }
+  
