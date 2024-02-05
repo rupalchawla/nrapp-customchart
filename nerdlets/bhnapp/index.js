@@ -1,32 +1,82 @@
 import React, { useState } from "react";
-import { BillboardChart, PieChart } from "nr1";
+import {
+  BillboardChart,
+  PieChart,
+  Grid,
+  GridItem,
+  Button,
+  BlockText,
+  HeadingText,
+  Card,
+  CardHeader,
+  CardBody,
+  Modal,
+} from "nr1";
 import LineChartDemo from "../common/LineChartDemo";
 import StackedBarChartDemo from "../common/StacketBarChartDemo";
 import BarChartDemo from "../common/BarChartDemo";
 import CustomBarChartDemo from "../common/CustomBarChartDemo";
+import AccountPickerDemo from "../common/AccountPicker";
+import ModalDemo from "../common/ModalDemo";
+import PopoverDemo from "../common/PopoverDemo";
 // import CustomBarChartDemo from "../../visualizations/custombarchart";
-
 
 // https://docs.newrelic.com/docs/new-relic-programmable-platform-introduction
 
 // export default class BhnappNerdlet extends React.Component {
 function BhnappNerdlet() {
   return (
-    <div>
-      <h1>Hello, bhnapp Nerdlet!</h1>
-      <LineChartDemo />
-      <BillboardChartDemo />
-      <PieChartDemo />
-      <StackedBarChartDemo />
-      <BarChartDemo />
-      <br />
-      Hello! This is a custom bar chart
-      <CustomBarChartDemo />
-    </div>
+    <Card>
+      <CardHeader
+        title="Hello, bhnapp Nerdlet!"
+        subtitle="This is the card's subtitle"
+      />
+      <CardBody>
+        <Grid>
+          {/* OVerlays */}
+          <GridItem columnSpan={6}>
+            <ModalDemo />
+          </GridItem>
+          <GridItem columnSpan={6}>
+            <PopoverDemo />
+          </GridItem>
+          
+
+          {/* AccountPickerDemo */}
+          <GridItem columnSpan={12}>
+            <AccountPickerDemo />
+          </GridItem>
+          {/* LineChartDemo */}
+          <GridItem columnSpan={4}>
+            <LineChartDemo />
+          </GridItem>
+          {/* BillboardChartDemo */}
+          <GridItem columnSpan={4}>
+            <BillboardChartDemo />
+          </GridItem>
+          {/* PieChartDemo */}
+          <GridItem columnSpan={4}>
+            <PieChartDemo />
+          </GridItem>
+          {/* StackedBarChartDemo */}
+          <GridItem columnSpan={4}>
+            <StackedBarChartDemo />
+          </GridItem>
+          {/* BarChartDemo */}
+          <GridItem columnSpan={4}>
+            <BarChartDemo />
+          </GridItem>
+          {/* CustomBarChartDemo */}
+          <GridItem columnSpan={12}>
+            <h1>Hello! This is a custom bar chart</h1>
+            <br />
+            <CustomBarChartDemo />
+          </GridItem>
+        </Grid>
+      </CardBody>
+    </Card>
   );
 }
-
-
 
 /**------------------------------------------------------------------------
  * Billboard chart demo
